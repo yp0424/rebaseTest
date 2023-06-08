@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <!-- <script src="./index.js"></script>
+    <script src="./ind.js"></script> -->
+  <!-- 引入嵌入投放js -->
+ <script type="text/javascript"
+   src="https://csair-dev.cem-custom.bestcem.com/bestcem/test/rs/deliver/embed/6389d4b13e2c0c000a4b88ba/transition.js">
+ </script>
+  <script type="text/javascript">
+    // setTimeout(() => {
+      //survey_url 示例 http://csair-dev.cem-custom.bestcem.com/api/deliver/c_l_deliver?system_no=test1&condition_no=13
+      //rules 投放规则 外部参数需要符合设置的投放规则，否则问卷不生效
+      //externalParams //外部参数信息
+    //   var {
+    //     survey_url,
+    //     externalParams
+    //   } = window.best_cem_props; //获取全局参数
+    //   //由前端人员从survey_url中截取condition_no 和system_no
+    //   var condition_no = "test1";
+    //   var system_no = "13";
+
+    //   //密钥
+    //   var screctKey = "sadsdsd"
+    //   //嵌入系统开发人员提供外部参数集合 currParam
+    //   var currParam = {
+    //     test: 111,
+    //   }
+    //   //可能提供很多外部参数或缺少外部参数，只需要根据倍市得提供的外部参数信息集合externalParams获取对应的外部参数集合即可，如果提供的外部参数缺少，提示用户
+    //   var paramsList = externalParams.map(item => {
+    //     if (currParam[item.extparam_name] === undefined) {
+    //       alert("缺少外部参数" + item.extparam_name);
+    //     } else {
+    //       return currParam[item.extparam_name]
+    //     }
+    //   });
+    //   // 联系后端人员 提供condition_no,system_no screctKey,paramsList 获取签名sig
+    //   var sig = "09329abbe103429c149c3503ec67601f";
+    //   //根据externalParams提供的字段aes_encrypt 是否加密
+    //   // 前端人员写一个AES加密的函数，如果字段需要加密则调用AES加密函数加密，并拼接处理好的参数
+    //   var urlParam = "";
+    //   for (let i in externalParams) {
+    //     if (externalParams[i].aes_encrypt) { //如果外部参数需要加密
+    //       urlParam += externalParams[i].extparam_name + "=" + AES(currParam[externalParams[i].extparam_name]) + '&'
+    //     } else {
+    //       urlParam += externalParams[i].extparam_name + "=" + currParam[externalParams[i].extparam_name] + '&'
+    //     }
+    //   }
+      
+    //   //在survey_url 后拼接urlParam和sig
+    //   var url = survey_url + "&" + urlParam + "sig=" + sig;
+    //   console.log("外部嵌入参数链接", url);
+    //   //示例http://csair-dev.cem-custom.bestcem.com/api/deliver/c_l_deliver?system_no=test1&condition_no=13&test=111&sig=09329abbe103429c149c3503ec67601f
+    //   embed_deliver.bestCemTrigger(url);
+    // }, 1000)
+  </script>
+</body>
+
+</html>
